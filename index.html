@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Quizz Noël</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b30000;
+    background-image: url("https://www.publicdomainpictures.net/pictures/320000/velka/christmas-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    border: 4px solid green;
+    box-shadow: 0 0 15px black;
+}
+
+h1 {
+    text-align: center;
+    color: #b30000;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: green;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 15px;
+    border: 2px solid #b30000;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+}
+
+input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #b30000;
+}
+
+#resultat {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    color: blue;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>Quiz Noël</h1>
+
+<form name="quizNoel">
+
+<label for="manteau">Quelle couleur a le manteau du Père Noël ?</label>
+<select id="manteau">
+  <option value="">--Choisir--</option>
+  <option value="bleu">Bleu</option>
+  <option value="rouge">Rouge</option>
+  <option value="blanc">Blanc</option>
+  <option value="noir">Noir</option>
+</select>
+
+<label for="sapin">Quel arbre décore-t-on à Noël ?</label>
+<select id="sapin">
+  <option value="">--Choisir--</option>
+  <option value="chene">Chêne</option>
+  <option value="saule">Saule</option>
+  <option value="sapin">Sapin</option>
+  <option value="laurier">Laurier</option>
+</select>
+
+<label for="rennes">Quels animaux tirent le traîneau du Père Noël ?</label>
+<select id="rennes">
+  <option value="">--Choisir--</option>
+  <option value="chiens">Chiens</option>
+  <option value="chevaux">Chevaux</option>
+  <option value="tigres">Tigres</option>
+  <option value="rennes">Rennes</option>
+</select>
+
+<label for="cheminee">Par où entre le Père Noël pour déposer les cadeaux ?</label>
+<select id="cheminee">
+  <option value="">--Choisir--</option>
+  <option value="porte">Porte</option>
+  <option value="fenetre">Fenêtre</option>
+  <option value="cheminee">Cheminée</option>
+  <option value="garage">Garage</option>
+</select>
+
+<label for="gouter">Que laissent les enfants pour le Père Noël ?</label>
+<select id="gouter">
+  <option value="">--Choisir--</option>
+  <option value="biscuits">Des biscuits et du lait</option>
+  <option value="cadeaux">Des cadeaux</option>
+  <option value="chaussettes">Des chaussettes sales</option>
+  <option value="ballons">Des ballons</option>
+</select>
+
+<input type="button" value="Afficher le résultat" onclick="calculerNote()">
+
+<p id="resultat"></p>
+
+</form>
+</div>
+
+<script>
+function calculerNote() {
+    let score = 0;
+    let total = 5;
+
+    if (document.getElementById("manteau").value === "rouge") score++;
+    if (document.getElementById("sapin").value === "sapin") score++;
+    if (document.getElementById("rennes").value === "rennes") score++;
+    if (document.getElementById("cheminee").value === "cheminee") score++;
+    if (document.getElementById("gouter").value === "biscuits") score++;
+
+    document.getElementById("resultat").innerHTML =
+        "Vous avez obtenu " + score + " sur " + total + " bonnes réponses !";
+}
+</script>
+
+</body>
+</html>
