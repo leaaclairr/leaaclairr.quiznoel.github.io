@@ -137,6 +137,15 @@ input[type="button"]:hover {
   <option value="decembre">décembre</option>
 </select>
 
+<label for="sommet">Que met-on souvent au sommet du sapin de Noël ?</label>
+<select id="sommet">
+  <option value="">--Choisir--</option>
+  <option value="boules">Une boules</option>
+  <option value="etoile">Une étoile</option>
+  <option value="guirlande">Une guirlande</option>
+  <option value="cierge">Un cierge</option>
+</select>
+
 <input type="button" value="Afficher le résultat" onclick="calculerNote()">
 
 <p id="resultat"></p>
@@ -147,7 +156,7 @@ input[type="button"]:hover {
 <script>
 function calculerNote() {
     let score = 0;
-    let total = 6;
+    let total = 7;
 
     if (document.getElementById("manteau").value === "rouge") score++;
     if (document.getElementById("sapin").value === "sapin") score++;
@@ -155,7 +164,8 @@ function calculerNote() {
     if (document.getElementById("cheminee").value === "cheminee") score++;
     if (document.getElementById("gouter").value === "biscuits") score++;
     if (document.getElementById("mois").value === "decembre") score++;
-
+    if (document.getElementById("sommet").value === "etoile") score++;
+    
     document.getElementById("resultat").innerHTML =
         "Vous avez obtenu " + score + " sur " + total + " bonnes réponses !";
 }
@@ -163,6 +173,7 @@ function calculerNote() {
 
 </body>
 </html>
+
 
 
 
