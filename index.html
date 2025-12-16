@@ -127,6 +127,16 @@ input[type="button"]:hover {
   <option value="ballons">Des ballons</option>
 </select>
 
+
+<label for="mois">Quel est le mois ou l'on fête Noël ?</label>
+<select id="mois">
+  <option value="">--Choisir--</option>
+  <option value="septembre">septembre</option>
+  <option value="octobre">octobre</option>
+  <option value="novembre">novembre</option>
+  <option value="decembre">décembre</option>
+</select>
+
 <input type="button" value="Afficher le résultat" onclick="calculerNote()">
 
 <p id="resultat"></p>
@@ -144,6 +154,7 @@ function calculerNote() {
     if (document.getElementById("rennes").value === "rennes") score++;
     if (document.getElementById("cheminee").value === "cheminee") score++;
     if (document.getElementById("gouter").value === "biscuits") score++;
+    if (document.getElementById("mois").value === "novembre") score++;
 
     document.getElementById("resultat").innerHTML =
         "Vous avez obtenu " + score + " sur " + total + " bonnes réponses !";
@@ -152,3 +163,4 @@ function calculerNote() {
 
 </body>
 </html>
+
